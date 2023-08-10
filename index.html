@@ -1,12 +1,178 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>OI</h1>
+    <link rel="stylesheet" href="./styles/reset.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./styles/styles.css">
+    <link rel="icon" href="./public/imgs/favicon.ico">
     
+    <title>Envio Fácil - Solistica</title>
+</head>
+
+<body>
+    <header>
+        <img src="./public/imgs/Logo.png"
+            alt="Quadrado com três setas para o lado diretiro escrito 'Envio Fácil' com o nome Solista na parte inferior direita">
+    </header>
+    <main>
+        <form action="https://api.sheetmonkey.io/form/6PGLXBoM4jUEZpSJ9vCwGD" method="POST">
+            <section id="remetente">
+                <h3>Remetente:</h3>
+                <div class="container">
+
+                    <label for="idRemetente">
+                        CNPJ/CPF remetente:
+                        <input id="idRemetente" name="idRemetente" type="text"
+                            placeholder="Ex: 00.000.000/0000-00 ou 000.000.000-00" required minlength="11"
+                            maxlength="18">
+                    </label>
+
+                    <label for="cepRemetente">CEP:
+                        <input id="cepRemetente" name="cepRemetente" type="text" placeholder="Ex: 00.000-000" required
+                            minlength="8" maxlength="10">
+                    </label>
+
+                    <label for="bairroRemetente">
+                        Bairro:
+                        <input id="bairro" class="localidade" name="bairroRemetente" type="text"
+                            placeholder="Ex: Jd Envio Fácil" required>
+                    </label>
+
+                    <label for="ruaRemetente">
+                        Rua:
+                        <input id="logradouro" class="localidade" name="ruaRemetente" type="text"
+                            placeholder="Ex: Rua da Logistica" required>
+                    </label>
+
+
+                    <label for="numero">
+                        N°:
+                        <input id="numeroRemetente" name="numeroRemetente" type="text" placeholder="Ex: 111" required>
+                    </label>
+
+                    <label for="cidadeRemetente">
+                        Cidade:
+                        <input id="localidade" class="localidade" name="cidadeRemetente" type="text"
+                            placeholder="Ex: Campinas">
+                    </label>
+
+                    <label for="ufRemetente">
+                        UF:
+                        <input id="uf" class="localidade" name="ufRemetente" type="text" placeholder="Ex: SP"
+                            minlength="2" maxlength="2">
+                    </label>
+
+                </div>
+
+            </section>
+
+            <section id="destinatario">
+                <h3>Destinatário:</h3>
+                <div class="container">
+
+                    <label for="idDestinatario">
+                        CNPJ/CPF Destinatario:
+                        <input id="idDestinatario" name="idDestinatario" type="text"
+                            placeholder="Ex: 00.000.000/0000-00 ou 000.000.000-00" required minlength="11"
+                            maxlength="18">
+                    </label>
+
+                    <label for="cepDestinatario">CEP:
+                        <input id="cepDestinatario" name="cepDestinatario" type="text" placeholder="Ex: 00.000-000"
+                            required minlength="8" maxlength="10">
+                    </label>
+
+                    <label for="bairroDestinatario">
+                        Bairro:
+                        <input id="bairro" class="localidade" name="bairroDestinatario" type="text"
+                            placeholder="Ex: Jd Envio Fácil" required>
+                    </label>
+
+                    <label for="ruaDestinatario">
+                        Rua:
+                        <input id="logradouro" class="localidade" name="ruaDestinatario" type="text"
+                            placeholder="Ex: Rua da Logistica" required>
+                    </label>
+
+
+                    <label for="numero">
+                        N°:
+                        <input id="numeroDestinatario" name="numeroDestinatario" type="text" placeholder="Ex: 111"
+                            required>
+                    </label>
+
+                    <label for="cidadeDestinatario">
+                        Cidade:
+                        <input id="localidade" class="localidade" name="cidadeDestinatario" type="text"
+                            placeholder="Ex: Campinas">
+                    </label>
+
+                    <label for="ufDestinatario">
+                        UF:
+                        <input id="uf" class="localidade" name="ufDestinatario" type="text" placeholder="Ex: SP"
+                            minlength="2" maxlength="2">
+                    </label>
+
+                </div>
+
+            </section>
+
+            <section>
+                <h3>Mercadoria(s):</h3>
+                <div class="container">
+                    <label for="volumes">
+                        Qtd Volumes:
+                        <input name="volumes" type="number" placeholder="Ex: 3" required>
+                    </label>
+
+                    <label for="nota">
+                        Valor de Nota:
+                        <input name="nota" type="number" placeholder="Ex: 4500,00" required>
+                    </label>
+
+                    <label for="peso">
+                        Peso de Nota:
+                        <input name="peso" type="number" placeholder="Ex: 45" required>
+                    </label>
+                </div>
+            </section>
+
+            <section>
+                <h3>Pagador:</h3>
+                <div class="container radio">
+
+                    <label for="remetente">
+                        <input type="radio" id="remetente" value="Remetente" name="pagador">
+                        Remetente
+                    </label>
+
+                    <label for="remetente">
+                        <input type="radio" id="destinatario" value="destinatário" name="pagador">
+                        Destinatário
+                    </label>
+
+                    <label for="remetente">
+                        <input type="radio" id="terceiro" value="terceiro" name="pagador">
+                        Terceiro
+                    </label>
+
+                </div>
+            </section>
+
+            <input type="hidden" name="Created" value="x-sheetmonkey-current-date-time" />
+            <input id="submit" type="submit" value="Solicitar impressão">
+        </form>
+
+
+
+    </main>
+
+    <script src="./script/getAddress.js"></script>
+    <script src="./script/idClienteValidation.js"></script>
 </body>
+
 </html>
